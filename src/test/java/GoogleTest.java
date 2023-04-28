@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class GoogleTest {
     @Test
-    public void googleTest(){
+    public void googleTest() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         WebElement findField = driver.findElement(By.xpath("//textarea[@title ='Поиск']"));
@@ -16,6 +16,7 @@ public class GoogleTest {
         findField.sendKeys(Keys.ENTER);
         WebElement text = driver.findElement(By.xpath("//h3[text()='Selenium']"));
         Assert.assertEquals(text.getText(), "Selenium");
+        Thread.sleep(2000);
         driver.close();
 
 
