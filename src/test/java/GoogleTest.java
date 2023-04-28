@@ -16,6 +16,9 @@ public class GoogleTest {
         findField.sendKeys(Keys.ENTER);
         WebElement text = driver.findElement(By.xpath("//h3[text()='Selenium']"));
         Assert.assertEquals(text.getText(), "Selenium");
-        driver.quit();
+        driver.close();
+
+
+
     }
 }
